@@ -1,16 +1,17 @@
 from django.db import models
-from django.contrib.auth import get_user_model, 
+from django.contrib.auth import get_user_model
 
 # Create your models here.
 
-class SavedRecommendations(models.Model):
+class SavedRecommendation(models.Model):
     owner = models.ForeignKey(
         get_user_model(),
         on_delete=models.CASCADE,
-        related_name='owner_recommendations')
+        # related_name='owner_recommendations'
+        )
     product = models.ForeignKey(
-        'Product',
+        'products.Product',
         on_delete=models.CASCADE,
-        related_name='product_recommendations'
+        # related_name='product_recommendations'
     )
     
